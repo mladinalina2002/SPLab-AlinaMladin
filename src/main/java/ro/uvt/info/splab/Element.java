@@ -1,5 +1,8 @@
 package ro.uvt.info.splab;
 
-public abstract class Element {
-    abstract void print();
+public interface Element {
+    void print();
+    void add(Element element);
+    void remove(Element element);
+    Element get(int id);
 }
