@@ -1,5 +1,6 @@
 package ro.uvt.info.splab;
 
+
 public interface AlignStrategy {
-    void render(Paragraph paragraph, Context context);
+    public void render(Paragraph paragraph, Context context);
 }

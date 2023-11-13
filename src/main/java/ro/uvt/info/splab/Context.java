@@ -1,8 +1,5 @@
 package ro.uvt.info.splab;
 
-import lombok.Getter;
-
-@Getter
 public class Context {
     private int pageWidth=156;
 
@@ -11,6 +8,10 @@ public class Context {
 
     public Context(int pageWidth) {
         this.pageWidth = pageWidth;
+    }
+
+    public int getPageWidth() {
+        return pageWidth;
     }
 
     public void setPageWidth(int pageWidth) {

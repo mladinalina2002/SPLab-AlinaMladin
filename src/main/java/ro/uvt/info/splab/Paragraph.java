@@ -1,4 +1,5 @@
 package ro.uvt.info.splab;
+
 import lombok.Data;
 
 
@@ -7,6 +8,11 @@ import lombok.Data;
 public class Paragraph implements Element{
     private String text;
     private AlignStrategy textAlignment;
+
+    public Paragraph(String text, AlignStrategy textAlignment) {
+        this.text = text;
+        this.textAlignment=textAlignment;
+    }
 
     public Paragraph(String text) {
         this.text = text;
@@ -33,9 +39,9 @@ public class Paragraph implements Element{
         }
     }
 
+    @Override
+    public void add(Element element) {
 
-    public void add() {
-        add(null);
     }
 
     @Override
