@@ -1,5 +1,6 @@
-package ro.uvt.info.splab;
+package ro.uvt.models;
 
 public interface Picture {
     String url();
 }
+

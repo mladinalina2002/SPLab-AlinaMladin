@@ -1,10 +1,11 @@
-package ro.uvt.info.splab;
+package ro.uvt;
+
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import example.ClientComponent;
-import example.SingletonComponent;
-import example.TransientComponent;
-import ro.uvt.info.splab.*;
+import ro.uvt.example.ClientComponent;
+import ro.uvt.example.SingletonComponent;
+import ro.uvt.example.TransientComponent;
+import ro.uvt.models.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -12,8 +13,8 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class SpLabApplication {
 
-	public static void main(String[] args) throws Exception {
-		//SpringApplication.run(SpLabApplication.class, args);
+    public static void main(String[] args) throws Exception {
+        //SpringApplication.run(SpLabApplication.class, args);
 //        Section cap1 = new Section("Capitolul 1");
 //        Paragraph p1 = new Paragraph("Paragraph 1");
 //        cap1.add(p1);
@@ -35,43 +36,43 @@ public class SpLabApplication {
 //        System.out.println();
 //        cap1.print();
 
-		//
+        //
 // Run this main function and inspect the output console
 // to learn about
 // the lifecycle of objects within
 // Spring Dependency Injection Context
 //
 // Gets a handle of dependency injection context
-		ApplicationContext context =
-				SpringApplication.run(SpLabApplication.class, args);
+        ApplicationContext context =
+                SpringApplication.run(SpLabApplication.class, args);
 // Gets an instance of TransientComponent from the DI context
-		TransientComponent transientBean =
-				context.getBean(TransientComponent.class);
-		transientBean.operation();
+        TransientComponent transientBean =
+                context.getBean(TransientComponent.class);
+        transientBean.operation();
 // Note that every time an instance is required,
 // the DI context creates a new one
-		transientBean = context.getBean(TransientComponent.class);
-		transientBean.operation();
+        transientBean = context.getBean(TransientComponent.class);
+        transientBean.operation();
 // Gets an instance of SingletonComponent from the DI context
 // Note that the unique instance was created while
 // application was loaded, before creating
 // the transient instances
-		SingletonComponent singletonBean =
-				context.getBean(SingletonComponent.class);
-		singletonBean.operation();
+        SingletonComponent singletonBean =
+                context.getBean(SingletonComponent.class);
+        singletonBean.operation();
 // Note that every time an instance is required,
 // the DI returns the same unique one
-		singletonBean = context.getBean(SingletonComponent.class);
-		singletonBean.operation();
+        singletonBean = context.getBean(SingletonComponent.class);
+        singletonBean.operation();
 // Gets an instance of another class that
 // requires singleton/transient components
 // Note where this instance was created and what beans
 // were used to initialize it
-		ClientComponent c = context.getBean(ClientComponent.class);
-		c.operation();
+        ClientComponent c = context.getBean(ClientComponent.class);
+        c.operation();
 // One can also request an instance from DI context by name
-		c = (ClientComponent)context.getBean("clientComponent");
-		c.operation();
-	}
+        c = (ClientComponent)context.getBean("clientComponent");
+        c.operation();
+    }
 
 }

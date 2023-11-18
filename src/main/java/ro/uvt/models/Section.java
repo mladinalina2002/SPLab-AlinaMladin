@@ -1,10 +1,10 @@
-package ro.uvt.info.splab;
+package ro.uvt.models;
 
 import java.util.ArrayList;
 
 public class Section implements Element{
-    private final String title;
-    private final ArrayList<Element> elements=new ArrayList<>();
+    private String title;
+    private ArrayList<Element> elements=new ArrayList<>();
 
     public Section(String title) {
         this.title = title;

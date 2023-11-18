@@ -1,4 +1,4 @@
-package example;
+package ro.uvt.example;
 
 import org.springframework.stereotype.Component;
 

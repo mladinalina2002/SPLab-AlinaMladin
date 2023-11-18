@@ -1,14 +1,9 @@
-package ro.uvt.info.splab;
-import lombok.Data;
+package ro.uvt.models;
 
-@Data
-public class Table implements Element{
+public class TableOfContents implements Element{
     private String something;
 
-    public Table(String something) {
-        this.something = something;
-    }
-
+    @Override
     public void print() {
         System.out.println("Something: " + something);
     }

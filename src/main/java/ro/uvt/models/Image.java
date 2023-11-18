@@ -1,4 +1,4 @@
-package ro.uvt.info.splab;
+package ro.uvt.models;
 import lombok.Data;
 
 import java.util.concurrent.TimeUnit;
