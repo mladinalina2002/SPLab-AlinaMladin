@@ -1,5 +1,7 @@
 package ro.uvt.models;
 
+import ro.uvt.services.Visitor;
+
 public class TableOfContents implements Element{
     private String something;
 
@@ -21,5 +23,10 @@ public class TableOfContents implements Element{
     @Override
     public Element get(int id) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitTableOfContents(this);
     }
 }
