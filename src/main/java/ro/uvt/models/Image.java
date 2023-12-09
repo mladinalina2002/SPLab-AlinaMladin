@@ -1,5 +1,7 @@
 package ro.uvt.models;
+
 import lombok.Data;
+import ro.uvt.services.Visitor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -34,6 +36,11 @@ public class Image implements Element, Picture{
     @Override
     public Element get(int id) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitImage(this);
     }
 
     @Override
