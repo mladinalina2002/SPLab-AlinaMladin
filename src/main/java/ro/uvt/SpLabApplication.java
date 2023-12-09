@@ -1,6 +1,5 @@
 package ro.uvt;
 
-
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import ro.uvt.example.ClientComponent;
 import ro.uvt.example.SingletonComponent;
