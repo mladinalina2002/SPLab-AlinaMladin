@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ro.uvt.example.ClientComponent;
 
-
 @RestController
 @RequestMapping("/")
 public class HelloController {
