@@ -1,7 +1,8 @@
 package ro.uvt.models;
 
 import lombok.Data;
-
+import ro.uvt.services.AlignStrategy;
+import ro.uvt.services.Visitor;
 
 
 @Data
@@ -52,6 +53,11 @@ public class Paragraph implements Element{
     @Override
     public Element get(int id) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitParagraph(this);
     }
 
 }
