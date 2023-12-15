@@ -47,4 +47,8 @@ public class Image implements Element, Picture{
     public String url() {
         return null;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aae49cabfa902e27e6797e66aa6f4d2f6e6d405a
