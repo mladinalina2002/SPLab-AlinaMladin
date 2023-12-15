@@ -4,6 +4,11 @@ import ro.uvt.services.Visitor;
 
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import ro.uvt.services.Visitor;
+import java.util.ArrayList;
+
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Section implements Element{
     private String title;
     private ArrayList<Element> elements=new ArrayList<>();

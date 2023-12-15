@@ -31,9 +31,14 @@ public class SpLabApplication {
         cap111.add(new Paragraph("Text from subchapter 1.1.1"));
         cap111.add(cap1111);
         cap1111.add(new Image("Image subchapter 1.1.1.1"));
-        //noapteBuna.accept(new RenderContentVisitor());
-        new RenderContentVisitor().visitBook(noapteBuna);
-        System.out.println(new BookController().printStatistics());
+
+        String filePath = "books.txt";
+
+        Command bookSaveCommand = new SaveBookCommand(noapteBuna, filePath);
+        Invoker invoker = new Invoker();
+        invoker.setCommand(bookSaveCommand);
+
+        invoker.executeCommand();
 
 
 
