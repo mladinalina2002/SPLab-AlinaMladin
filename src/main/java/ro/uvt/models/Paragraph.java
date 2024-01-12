@@ -1,13 +1,20 @@
 package ro.uvt.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import lombok.Data;
 import ro.uvt.services.AlignStrategy;
 import ro.uvt.services.Visitor;
 
 
 @Data
-public class Paragraph implements Element{
+@Entity
+public class Paragraph extends BaseElement{
+    @Id
+    private int id;
     private String text;
+    @Transient
     private AlignStrategy textAlignment;
 
     public Paragraph(String text, AlignStrategy textAlignment) {
@@ -21,6 +28,10 @@ public class Paragraph implements Element{
 
     public Paragraph(AlignStrategy textAlignment) {
         this.textAlignment = textAlignment;
+    }
+
+    public Paragraph() {
+
     }
 
     public void render(Paragraph paragraph, Context context){
@@ -60,8 +71,4 @@ public class Paragraph implements Element{
         v.visitParagraph(this);
     }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> aae49cabfa902e27e6797e66aa6f4d2f6e6d405a

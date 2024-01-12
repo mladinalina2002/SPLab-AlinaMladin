@@ -1,8 +1,17 @@
 package ro.uvt.models;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Data;
 import ro.uvt.services.Visitor;
 
+
+@Data
+@Entity
 public class TableOfContents implements Element{
+    @Id
+    private int id;
     private String something;
 
     @Override
@@ -29,8 +38,4 @@ public class TableOfContents implements Element{
     public void accept(Visitor v) {
         v.visitTableOfContents(this);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> aae49cabfa902e27e6797e66aa6f4d2f6e6d405a

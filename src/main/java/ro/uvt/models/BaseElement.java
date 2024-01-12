@@ -1,27 +1,21 @@
 package ro.uvt.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import ro.uvt.services.Visitor;
 
 @Data
 @Entity
-public class Table extends BaseElement{
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class BaseElement implements Element{
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String something;
 
-    public Table(String something) {
-        this.something = something;
-    }
-
-    public Table() {
-
-    }
-
+    @Override
     public void print() {
-        System.out.println("Something: " + something);
+
     }
 
     @Override
@@ -41,6 +35,6 @@ public class Table extends BaseElement{
 
     @Override
     public void accept(Visitor v) {
-        v.visitTable(this);
+
     }
 }

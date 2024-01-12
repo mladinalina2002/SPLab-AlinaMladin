@@ -1,19 +1,19 @@
 package ro.uvt.models;
 
-import ro.uvt.services.Visitor;
-
-import java.util.ArrayList;
-
-<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import jakarta.persistence.*;
+import lombok.Data;
 import ro.uvt.services.Visitor;
 import java.util.ArrayList;
 
+@Data
+@Entity
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-=======
->>>>>>> aae49cabfa902e27e6797e66aa6f4d2f6e6d405a
-public class Section implements Element{
+public class Section extends BaseElement{
+    @Id
+    private int id;
     private String title;
+    @OneToMany(targetEntity = BaseElement.class)
     private ArrayList<Element> elements=new ArrayList<>();
 
     public Section(String title) {
@@ -26,6 +26,9 @@ public class Section implements Element{
         for (Element element : elements) {
             element.print();
         }
+    }
+
+    public Section() {
     }
 
     @Override
@@ -47,8 +50,4 @@ public class Section implements Element{
     public void accept(Visitor v) {
         v.visitSection(this);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> aae49cabfa902e27e6797e66aa6f4d2f6e6d405a

@@ -1,14 +1,27 @@
 package ro.uvt.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+import lombok.Data;
 import ro.uvt.services.Visitor;
 
-public class ImageProxy implements Element, Picture{
-    String url;
+@Data
+@Entity
+public class ImageProxy extends BaseElement implements  Picture{
+    @Id
+    private int id;
+    private String url;
+    @Transient
     private Image realImage;
 
     public ImageProxy(String url) {
         this.url = url;
         this.realImage=null;
+    }
+
+    public ImageProxy() {
+
     }
 
     @Override
@@ -48,8 +61,4 @@ public class ImageProxy implements Element, Picture{
         }
         return realImage;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> aae49cabfa902e27e6797e66aa6f4d2f6e6d405a
